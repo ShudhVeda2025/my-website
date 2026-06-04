@@ -1,1489 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShudhVeda | Purity You Can Taste. Tradition You Can Trust.</title>
     <link rel="icon" href="favicon.ico">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ShudhVeda | Purity You Can Taste. Tradition You Can Trust.</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-    .reveal{
-opacity:0;
-transform:translateY(50px);
-transition:all .8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-    .fade-up{
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s forwards;
-}
-
-@keyframes fadeUp{
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#ffffff;
-color:#222;
-}
-
-:root{
---primary:#1f4d36;
---secondary:#2f6d4e;
---gold:#d4af37;
---ivory:#faf7f0;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:white;
-box-shadow:0 2px 20px rgba(0,0,0,.08);
-z-index:1000;
-}
-
-.nav-container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.logo img{
-height:60px;
-}
-
-.logo-text h2{
-color:var(--primary);
-font-size:28px;
-font-weight:800;
-}
-
-.logo-text p{
-font-size:12px;
-color:#666;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#222;
-font-weight:500;
-}
-
-.order-btn{
-background:var(--primary);
-color:white;
-padding:12px 24px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* HERO */
-.hero{
-padding-top:140px;
-padding-bottom:100px;
-background:linear-gradient(
-to bottom,
-#ffffff,
-#faf7f0
-);
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.badge{
-display:inline-block;
-background:#eef8f1;
-padding:10px 20px;
-border-radius:50px;
-font-weight:600;
-color:var(--primary);
-}
-
-.hero h1{
-font-size:65px;
-line-height:1.1;
-margin-top:20px;
-font-weight:800;
-}
-
-.hero h1 span{
-color:var(--primary);
-}
-
-.hero p{
-margin-top:25px;
-font-size:18px;
-line-height:1.8;
-color:#555;
-}
-
-.hero-buttons{
-margin-top:35px;
-display:flex;
-gap:15px;
-}
-
-.btn-primary{
-background:var(--primary);
-color:white;
-padding:15px 30px;
-border-radius:10px;
-text-decoration:none;
-font-weight:600;
-}
-
-.btn-outline{
-border:2px solid var(--primary);
-color:var(--primary);
-padding:15px 30px;
-border-radius:10px;
-text-decoration:none;
-font-weight:600;
-}
-
-.hero-image{
-text-align:center;
-}
-
-.hero-image img{
-max-height:650px;
-width:auto;
-}
-
-/* TRUST */
-
-.trust{
-padding:70px 0;
-}
-
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.trust-card{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-text-align:center;
-font-weight:600;
-}
-/* PREMIUM HOVER EFFECTS */
-
-.trust-card{
-transition:all .3s ease;
-}
-
-.trust-card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-}
-
-/* BUTTON ANIMATION */
-
-.btn-primary,
-.btn-outline,
-.order-btn{
-transition:all .3s ease;
-}
-
-.btn-primary:hover{
-transform:translateY(-3px);
-background:#2f6d4e;
-}
-
-.btn-outline:hover{
-background:#1f4d36;
-color:white;
-}
-
-.order-btn:hover{
-background:#2f6d4e;
-}
-
-/* IMAGE ANIMATION */
-
-.hero-image img{
-transition:all .4s ease;
-}
-
-.hero-image img:hover{
-transform:scale(1.03);
-}
-
-/* SECTION SPACING */
-
-section{
-overflow:hidden;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media(max-width:992px){
-
-.hero-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.trust-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-#products .container > div:nth-child(2){
-grid-template-columns:1fr !important;
-}
-
-#process .container > div:nth-child(2){
-grid-template-columns:1fr !important;
-}
-
-}
-
-@media(max-width:768px){
-
-.nav-container{
-flex-direction:column;
-gap:15px;
-}
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
-
-.hero{
-padding-top:180px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.hero-buttons a{
-width:100%;
-text-align:center;
-}
-
-.trust-grid{
-grid-template-columns:1fr;
-}
-
-h2{
-font-size:34px !important;
-}
-
-}
-
-@media(max-width:480px){
-
-.logo-text h2{
-font-size:20px;
-}
-
-.hero h1{
-font-size:30px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.container{
-width:95%;
-}
-
-}
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1f4d36;
+            --secondary: #2f6d4e;
+            --gold: #d4af37;
+            --ivory: #faf7f0;
+            --text-dark: #222222;
+            --text-light: #555555;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            width: 100%;
+            padding-top: 90px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,.06);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h2 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .order-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 60px 0 80px 0;
+            background: linear-gradient(to bottom, #ffffff, var(--ivory));
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eef8f1;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--secondary);
+            box-shadow: 0 5px 15px rgba(31, 77, 54, 0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            transition: transform 0.4s ease;
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 0;
+            width: 100%;
+        }
+
+        .section-tag {
+            display: block;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* GRIDS */
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .trust-card {
+            background: var(--white);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.04);
+            text-align: center;
+            font-weight: 600;
+            transition: all .3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .trust-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        }
+
+        .gallery-box {
+            height: 220px;
+            background: #e9e9e9;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-light);
+            border: 1px dashed #ccc;
+        }
+
+        /* FORM STYLING */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+
+        .form-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,.05);
+            border: 1px solid #eee;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .feature-list li {
+            font-size: 16px;
+            line-height: 2;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        /* FLOATING ELEMENTS */
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 80px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,.2);
+            z-index: 9999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .bottom-order-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            z-index: 9998;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        .bottom-order-bar a {
+            background: var(--white);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111111;
+            color: var(--white);
+            padding: 60px 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        footer h2, footer h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-policy-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-policy-links a {
+            font-size: 12px;
+            color: #888;
+        }
+
+        address {
+            font-style: normal;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .grid-5, .grid-4 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 130px;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+                padding: 10px;
+            }
+            .nav-links {
+                gap: 15px;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .grid-5, .grid-4, .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .footer-links {
+                align-items: center;
+            }
+            .footer-policy-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 140px;
+            }
+            .logo-text h2 {
+                font-size: 20px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn-primary, .btn-outline {
+                width: 100%;
+            }
+            .grid-5, .grid-4, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .form-card {
+                padding: 20px;
+            }
+            .whatsapp-float {
+                right: 15px;
+                bottom: 75px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
-<a
-href="https://wa.me/918004340041"
-target="_blank"
-style="
-position:fixed;
-right:20px;
-bottom:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-color:white;
-box-shadow:0 5px 20px rgba(0,0,0,.3);
-z-index:9999;
-">
-💬
-</a>
-<script>
-
-function sendOrder(){
-
-let name =
-document.getElementById("name").value;
-
-let product =
-document.getElementById("product").value;
-
-let quantity =
-document.getElementById("quantity").value;
-
-let message =
-`Hello ShudhVeda,
-
-Name: ${name}
-
-Product: ${product}
-
-Quantity: ${quantity}
-
-I would like to place an order.`;
-
-let url =
-`https://wa.me/918004340041?text=${encodeURIComponent(message)}`;
-
-alert(
-"Thank you for choosing ShudhVeda. Redirecting to WhatsApp."
-);
-window.open(url,"_blank");
-
-}
-
-</script><script>
-
-const reveals =
-document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll",()=>{
-
-reveals.forEach((el)=>{
-
-let top =
-el.getBoundingClientRect().top;
-
-let windowHeight =
-window.innerHeight;
-
-if(top < windowHeight - 100){
-
-el.classList.add("active");
-
-}
-
-});
-
-});
-
-</script><div
-style="
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#1f4d36;
-padding:12px;
-display:flex;
-justify-content:center;
-z-index:9998;
-">
-
-<a
-href="https://wa.me/918004340041"
-style="
-background:#fff;
-color:#1f4d36;
-padding:14px 30px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-">
-🛒 Order Mustard Oil
-</a>
-
-</div>
 <body>
 
-<nav>
-<div class="container nav-container">
-
-<div class="logo">
-
-<img src="logo.png" alt="ShudhVeda">
-
-<div class="logo-text">
-<h2>SHUDHVEDA</h2>
-<p>Purity You Can Taste</p>
-</div>
-
-</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#process">Process</a>
-<a href="#contact">Contact</a>
-</div>
-
-<a href="https://wa.me/918004340041" class="order-btn">
-Order Now
-</a>
-
-</div>
-</nav>
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="badge">
-Premium Mustard Oil
-</div>
-
-<h1>
-Purity You Can Taste.
-<span>Tradition You Can Trust.</span>
-</h1>
-
-<p>
-ShudhVeda delivers carefully sourced and hygienically processed mustard oil crafted for Indian families who value purity, taste and trust.
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://wa.me/918004340041" class="btn-primary">
-Order on WhatsApp
-</a>
-
-<a href="#about" class="btn-outline">
-Learn More
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="mustard-bottle.png" alt="Mustard Oil">
-
-</div>
-
-</div>
-
-</section>
-<section id="about" style="padding:100px 0;background:#faf7f0;">
-
-<div class="container">
-
-<div style="text-align:center;max-width:900px;margin:auto;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-">
-About ShudhVeda
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-color:#1f4d36;
-font-weight:800;
-">
-Rooted In Purity
-</h2>
-
-<p style="
-margin-top:25px;
-font-size:18px;
-line-height:1.9;
-color:#555;
-">
-ShudhVeda was founded with a simple mission:
-to provide high-quality mustard oil that preserves
-purity, tradition and trust.
-
-Every seed is carefully sourced from farmers,
-cleaned, dried and processed using modern machinery
-to ensure quality and consistency in every bottle.
-</p>
-
-</div>
-
-</div>
-
-</section>
-<section id="process" style="padding:100px 0;">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-">
-Farm To Bottle
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-color:#1f4d36;
-font-weight:800;
-">
-Our Production Journey
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:20px;
-margin-top:70px;
-">
-
-<div class="trust-card">
-🌾<br><br>
-Farmer Sourcing
-</div>
-
-<div class="trust-card">
-💧<br><br>
-Cleaning & Drying
-</div>
-
-<div class="trust-card">
-⚙<br><br>
-Oil Extraction
-</div>
-
-<div class="trust-card">
-🧪<br><br>
-Filtration
-</div>
-
-<div class="trust-card">
-🧴<br><br>
-Bottle Filling & Sealing
-</div>
-
-</div>
-
-</div>
-
-</section><section id="products"
-style="
-padding:100px 0;
-background:#faf7f0;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-letter-spacing:2px;
-">
-OUR PRODUCTS
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Premium Mustard Oil
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:40px;
-margin-top:70px;
-">
-
-<div class="trust-card">
-
-<h3 style="font-size:28px;">
-500 ML
-</h3>
-
-<p style="
-margin-top:15px;
-color:#666;
-">
-Perfect for small families.
-</p>
-
-<a
-href="https://wa.me/918004340041"
-class="btn-primary"
-style="
-display:inline-block;
-margin-top:20px;
-">
-Order Now
-</a>
-
-</div>
-
-<div class="trust-card">
-
-<h3 style="font-size:28px;">
-1 Litre
-</h3>
-
-<p style="
-margin-top:15px;
-color:#666;
-">
-Best value for daily cooking.
-</p>
-
-<a
-href="https://wa.me/918004340041"
-class="btn-primary"
-style="
-display:inline-block;
-margin-top:20px;
-">
-Order Now
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section><section style="padding:100px 0;">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-WHY SHUDHVEDA
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Why Families Trust Us
-</h2>
-
-</div>
-
-<div class="trust-grid" style="margin-top:70px;">
-
-<div class="trust-card">
-✔ Premium Seeds
-</div>
-
-<div class="trust-card">
-✔ Modern Processing
-</div>
-
-<div class="trust-card">
-✔ Hygienic Packaging
-</div>
-
-<div class="trust-card">
-✔ Consistent Quality
-</div>
-
-</div>
-
-</div>
-
-</section><section
-style="
-padding:100px 0;
-background:#faf7f0;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-BENEFITS
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-The ShudhVeda Difference
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-margin-top:70px;
-">
-
-<div class="trust-card">
-🌿 Rich Aroma
-</div>
-
-<div class="trust-card">
-🍲 Everyday Cooking
-</div>
-
-<div class="trust-card">
-⭐ Premium Quality
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section id="faq" style="padding:100px 0;background:#fff;">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-letter-spacing:2px;
-">
-FAQ
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Frequently Asked Questions
-</h2>
-
-</div>
-
-<div style="
-max-width:900px;
-margin:60px auto 0;
-">
-
-<div class="trust-card" style="text-align:left;margin-bottom:20px;">
-<h3>Is ShudhVeda Mustard Oil suitable for daily cooking?</h3>
-<p style="margin-top:10px;color:#666;">
-Yes, it is designed for everyday household cooking.
-</p>
-</div>
-
-<div class="trust-card" style="text-align:left;margin-bottom:20px;">
-<h3>What pack sizes are available?</h3>
-<p style="margin-top:10px;color:#666;">
-Currently available in 500ml and 1 Liter bottles.
-</p>
-</div>
-
-<div class="trust-card" style="text-align:left;margin-bottom:20px;">
-<h3>How can I place an order?</h3>
-<p style="margin-top:10px;color:#666;">
-You can place an order directly through WhatsApp.
-</p>
-</div>
-
-<div class="trust-card" style="text-align:left;">
-<h3>Do you deliver across India?</h3>
-<p style="margin-top:10px;color:#666;">
-Delivery availability depends on your location.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section style="
-padding:100px 0;
-background:white;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-letter-spacing:2px;
-">
-CUSTOMER FEEDBACK
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-What Customers Say
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-margin-top:70px;
-">
-
-<div class="trust-card">
-⭐⭐⭐⭐⭐
-<p style="margin-top:20px;color:#555;">
-Excellent quality mustard oil. The aroma is amazing.
-</p>
-<h4 style="margin-top:15px;">
-Rajesh Kumar
-</h4>
-</div>
-
-<div class="trust-card">
-⭐⭐⭐⭐⭐
-<p style="margin-top:20px;color:#555;">
-Packaging was very good and delivery was smooth.
-</p>
-<h4 style="margin-top:15px;">
-Amit Verma
-</h4>
-</div>
-
-<div class="trust-card">
-⭐⭐⭐⭐⭐
-<p style="margin-top:20px;color:#555;">
-Trusted quality. My family really liked it.
-</p>
-<h4 style="margin-top:15px;">
-Abhijeet Sharma
-</h4>
-</div>
-
-</div>
-
-</section>
-<section style="
-padding:100px 0;
-background:#faf7f0;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-OUR GALLERY
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Behind ShudhVeda
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-margin-top:60px;
-">
-
-<div style="
-height:280px;
-background:#e9e9e9;
-border-radius:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-">
-Farm Image
-</div>
-
-<div style="
-height:280px;
-background:#e9e9e9;
-border-radius:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-">
-Processing Image
-</div>
-
-<div style="
-height:280px;
-background:#e9e9e9;
-border-radius:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-">
-Packaging Image
-</div>
-
-</div>
-
-</div>
-
-</section><section style="
-padding:100px 0;
-background:white;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-QUICK ORDER
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Order On WhatsApp
-</h2>
-
-</div>
-
-<div style="
-max-width:700px;
-margin:60px auto 0;
-">
-
-<div class="trust-card">
-
-<input
-id="name"
-type="text"
-placeholder="Your Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<select
-id="product"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<option>500 ML Bottle</option>
-<option>1 Liter Bottle</option>
-
-</select>
-
-<input
-id="quantity"
-type="number"
-placeholder="Quantity"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<button
-onclick="sendOrder()"
-class="btn-primary"
-style="
-border:none;
-cursor:pointer;
-">
-Place Order
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</section><section id="contact" style="
-padding:100px 0;
-background:#faf7f0;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-CONTACT US
-</span>
-
-<h2 style="
-font-size:50px;
-margin-top:20px;
-font-weight:800;
-color:#1f4d36;
-">
-Get In Touch
-</h2>
-
-<p style="
-margin-top:20px;
-font-size:18px;
-color:#666;
-">
-We would love to hear from you.
-</p>
-
-</div>
-
-<div style="
-max-width:800px;
-margin:60px auto 0;
-">
-
-<form class="trust-card">
-
-<input
-type="text"
-placeholder="Your Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<input
-type="email"
-placeholder="Email Address"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<input
-type="text"
-placeholder="Phone Number"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<textarea
-placeholder="Message"
-rows="5"
-style="
-width:100%;
-padding:16px;
-border:1px solid #ddd;
-border-radius:10px;
-"></textarea>
-
-<button
-type="button"
-class="btn-primary"
-style="
-border:none;
-margin-top:20px;
-cursor:pointer;
-">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</div>
-<section style="
-padding:100px 0;
-background:white;
-">
-
-<div class="container">
-
-<div style="text-align:center;">
-
-<span style="
-color:#d4af37;
-font-weight:700;
-">
-FLAGSHIP PRODUCT
-</span>
-
-<h2 style="
-font-size:50px;
-font-weight:800;
-margin-top:20px;
-color:#1f4d36;
-">
-ShudhVeda Mustard Oil
-</h2>
-
-</div>
-
-<div style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-margin-top:70px;
-">
-
-<div style="text-align:center;">
-
-<img
-src="mustard-bottle.png"
-alt="Mustard Oil"
-style="
-max-height:500px;
-width:auto;
-">
-
-</div>
-
-<div>
-
-<h3 style="
-font-size:40px;
-font-weight:800;
-color:#1f4d36;
-">
-Available In
-</h3>
-
-<ul style="
-margin-top:25px;
-line-height:2.2;
-font-size:20px;
-color:#555;
-">
-
-<li>✔ 500 ML Bottle</li>
-
-<li>✔ 1 Liter Bottle</li>
-
-<li>✔ Leak-Proof Packaging</li>
-
-<li>✔ Hygienically Processed</li>
-
-<li>✔ Premium Quality Mustard Seeds</li>
-
-</ul>
-
-<a
-href="https://wa.me/918004340041"
-class="btn-primary"
-style="
-display:inline-block;
-margin-top:30px;
-">
-Order Now
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-</section><section style="
-padding:100px 0;
-background:#1f4d36;
-color:white;
-text-align:center;
-">
-
-<div class="container">
-
-<h2 style="
-font-size:55px;
-font-weight:800;
-">
-Ready To Experience Purity?
-</h2>
-
-<p style="
-margin-top:25px;
-font-size:20px;
-opacity:.9;
-">
-Order ShudhVeda Mustard Oil Today.
-</p>
-
-<a
-href="https://wa.me/918004340041"
-style="
-display:inline-block;
-margin-top:30px;
-background:white;
-color:#1f4d36;
-padding:16px 35px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-">
-Order Now
-</a>
-
-</div>
-
-</section><footer style="
-background:#111;
-color:white;
-padding:70px 0 30px;
-">
-
-<div class="container">
-
-<div style="
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:40px;
-">
-<a href="privacy.html">
-Privacy Policy
-</a>
-
-<a href="terms.html">
-Terms
-</a>
-
-<a href="shipping.html">
-Shipping Policy
-</a>
-
-<a href="refund.html">
-Refund Policy
-</a>
-
-<div>
-
-<h2 style="font-size:32px;">
-SHUDHVEDA
-</h2>
-
-<p style="
-margin-top:20px;
-line-height:1.8;
-color:#ccc;
-">
-Purity You Can Taste.
-Tradition You Can Trust.
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<div style="
-margin-top:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-">
-
-<a href="#about" style="color:#ccc;text-decoration:none;">About</a>
-<a href="#products" style="color:#ccc;text-decoration:none;">Products</a>
-<a href="#contact" style="color:#ccc;text-decoration:none;">Contact</a>
-
-</div>
-
-</div>
-
-<div>
-
-<h3>Contact</h3>
-
-<p style="margin-top:20px;color:#ccc;">
-+91 8004340041
-<br>Email: shudhveda.oil@gmail.com
-<Address>Rajapur post karohaman,mankapur distrirct gonda, Uttar Pradesh, India pin:271302</Address>
-</p>
-
-</div>
-
-</div>
-
-<hr style="
-margin:40px 0 20px;
-border:none;
-border-top:1px solid #333;
-">
-
-<div style="text-align:center;color:#999;">
-© 2026 ShudhVeda. All Rights Reserved.
-</div>
-
-</div>
-
-</footer>
-
-<section class="trust">
-
-<div class="container">
-
-<div class="trust-grid">
-
-<div class="trust-card">
-🌱 Farm Sourced
-</div>
-
-<div class="trust-card">
-🧪 Quality Tested
-</div>
-
-<div class="trust-card">
-🛡 Hygienic Packaging
-</div>
-
-<div class="trust-card">
-🚚 Fast Delivery
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/918004340041" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+
+    <!-- Sticky Bottom Bar -->
+    <div class="bottom-order-bar">
+        <a href="https://wa.me/918004340041">🛒 Order Mustard Oil</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="ShudhVeda">
+                <div class="logo-text">
+                    <h2>SHUDHVEDA</h2>
+                    <p>Purity You Can Taste</p>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#process">Process</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/918004340041" class="order-btn">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge">Premium Mustard Oil</div>
+                <h1>Purity You Can Taste. <span>Tradition You Can Trust.</span></h1>
+                <p>ShudhVeda delivers carefully sourced and hygienically processed mustard oil crafted for Indian families who value purity, taste and trust.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/918004340041" class="btn-primary">Order on WhatsApp</a>
+                    <a href="#about" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="mustard-bottle.png" alt="ShudhVeda Mustard Oil Bottle">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-tag">About ShudhVeda</span>
+                <h2 class="section-title">Rooted In Purity</h2>
+                <p style="margin-top: 20px; font-size: 16px; line-height: 1.8; color: var(--text-light);">
+                    ShudhVeda was founded with a simple mission: to provide high-quality mustard oil that preserves purity, tradition and trust. 
+                    Every seed is carefully sourced from farmers, cleaned, dried and processed using modern machinery to ensure quality and consistency in every bottle.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Farm To Bottle</span>
+                <h2 class="section-title">Our Production Journey</h2>
+            </div>
+            <div class="grid-5">
+                <div class="trust-card">🌾<br><br>Farmer Sourcing</div>
+                <div class="trust-card">💧<br><br>Cleaning & Drying</div>
+                <div class="trust-card">⚙<br><br>Oil Extraction</div>
+                <div class="trust-card">🧪<br><br>Filtration</div>
+                <div class="trust-card">🧴<br><br>Bottle Filling & Sealing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Our Products</span>
+                <h2 class="section-title">Premium Mustard Oil</h2>
+            </div>
+            <div class="grid-2" style="max-width: 900px; margin: 50px auto 0;">
+                <div class="trust-card">
+                    <h3 style="font-size: 24px; color: var(--primary);">500 ML</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">Perfect for small families.</p>
+                    <a href="https://wa.me/918004340041" class="btn-primary" style="margin-top: 15px;">Order Now</a>
+                </div>
+                <div class="trust-card">
+                    <h3 style="font-size: 24px; color: var(--primary);">1 Litre</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">Best value for daily cooking.</p>
+                    <a href="https://wa.me/918004340041" class="btn-primary" style="margin-top: 15px;">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Spotlight Section -->
+    <section id="spotlight">
+        <div class="container">
+            <div class="grid-2">
+                <div class="text-center">
+                    <img src="mustard-bottle.png" alt="Mustard Oil Flagship" style="max-height: 400px; width: auto;">
+                </div>
+                <div>
+                    <span class="section-tag">Flagship Product</span>
+                    <h2 class="section-title" style="font-size: 32px;">ShudhVeda Mustard Oil</h2>
+                    <ul class="feature-list">
+                        <li>✔ Premium Quality Mustard Seeds</li>
+                        <li>✔ Expeller Pressed Extraction</li>
+                        <li>✔ Hygienically Processed & Filtered</li>
+                        <li>✔ Leak-Proof & Sealed Packaging</li>
+                        <li>✔ Rich Aroma & Natural Pungency</li>
+                    </ul>
+                    <a href="https://wa.me/918004340041" class="btn-primary" style="margin-top: 25px;">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Features Section -->
+    <section id="why-us" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Why ShudhVeda</span>
+                <h2 class="section-title">Why Families Trust Us</h2>
+            </div>
+            <div class="grid-4">
+                <div class="trust-card">✔ Premium Seeds</div>
+                <div class="trust-card">✔ Modern Processing</div>
+                <div class="trust-card">✔ Hygienic Packaging</div>
+                <div class="trust-card">✔ Consistent Quality</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Benefits</span>
+                <h2 class="section-title">The ShudhVeda Difference</h2>
+            </div>
+            <div class="grid-3">
+                <div class="trust-card">🌿 Rich Aroma</div>
+                <div class="trust-card">🍲 Everyday Cooking</div>
+                <div class="trust-card">⭐ Premium Quality</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Customer Feedback</span>
+                <h2 class="section-title">What Customers Say</h2>
+            </div>
+            <div class="grid-3">
+                <div class="trust-card">
+                    <div style="color: var(--gold); margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size: 14px; color: var(--text-light); font-weight: 400;">Excellent quality mustard oil. The aroma is amazing.</p>
+                    <h4 style="margin-top: 15px; font-size: 15px; color: var(--primary);">Rajesh Kumar</h4>
+                </div>
+                <div class="trust-card">
+                    <div style="color: var(--gold); margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size: 14px; color: var(--text-light); font-weight: 400;">Packaging was very good and delivery was smooth.</p>
+                    <h4 style="margin-top: 15px; font-size: 15px; color: var(--primary);">Amit Verma</h4>
+                </div>
+                <div class="trust-card">
+                    <div style="color: var(--gold); margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size: 14px; color: var(--text-light); font-weight: 400;">Trusted quality. My family really liked it.</p>
+                    <h4 style="margin-top: 15px; font-size: 15px; color: var(--primary);">Anushka Sharma</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Our Gallery</span>
+                <h2 class="section-title">Behind ShudhVeda</h2>
+            </div>
+            <div class="grid-3">
+                <div class="gallery-box">Farm Image</div>
+                <div class="gallery-box">Processing Image</div>
+                <div class="gallery-box">Packaging Image</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Order Form (WhatsApp Integrated with Address Input) -->
+    <section id="quick-order" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Quick Order</span>
+                <h2 class="section-title">Order On WhatsApp</h2>
+            </div>
+            <div class="form-container">
+                <div class="form-card">
+                    <input id="name" type="text" placeholder="Your Name" required>
+                    <select id="product">
+                        <option value="500 ML Bottle">500 ML Bottle</option>
+                        <option value="1 Liter Bottle">1 Liter Bottle</option>
+                    </select>
+                    <input id="quantity" type="number" placeholder="Quantity (e.g. 2)" min="1" required>
+                    <textarea id="address" placeholder="Your Full Delivery Address (Poora Pata)" rows="3" required></textarea>
+                    <button onclick="sendOrder()" class="btn-primary" style="width: 100%; cursor: pointer;">Place Order via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div style="max-width: 800px; margin: 40px auto 0;">
+                <div class="trust-card" style="text-align: left; margin-bottom: 15px;">
+                    <h3 style="font-size: 16px; color: var(--primary);">Is ShudhVeda Mustard Oil suitable for daily cooking?</h3>
+                    <p style="margin-top: 8px; color: var(--text-light); font-weight: 400; font-size: 14px;">Yes, it is perfectly crafted for everyday household cooking and frying.</p>
+                </div>
+                <div class="trust-card" style="text-align: left; margin-bottom: 15px;">
+                    <h3 style="font-size: 16px; color: var(--primary);">What pack sizes are available?</h3>
+                    <p style="margin-top: 8px; color: var(--text-light); font-weight: 400; font-size: 14px;">Currently, we offer it in 500ml and 1 Liter convenient leak-proof bottles.</p>
+                </div>
+                <div class="trust-card" style="text-align: left; margin-bottom: 15px;">
+                    <h3 style="font-size: 16px; color: var(--primary);">How can I place an order?</h3>
+                    <p style="margin-top: 8px; color: var(--text-light); font-weight: 400; font-size: 14px;">You can use the quick order form above or click any 'Order Now' button to instantly connect with us on WhatsApp.</p>
+                </div>
+                <div class="trust-card" style="text-align: left;">
+                    <h3 style="font-size: 16px; color: var(--primary);">Where are you located?</h3>
+                    <p style="margin-top: 8px; color: var(--text-light); font-weight: 400; font-size: 14px;">Our setup is based out of Mankapur, Gonda, Uttar Pradesh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" style="background: var(--ivory);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p style="margin-top: 10px; color: var(--text-light);">We would love to hear from you or answer any business queries.</p>
+            </div>
+            <div class="form-container">
+                <form class="form-card" onsubmit="event.preventDefault(); alert('Thank you for contacting us! We will get back to you soon.');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Phone Number" required>
+                    <textarea placeholder="Message" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: var(--primary); color: var(--white); text-align: center; padding: 70px 0;">
+        <div class="container">
+            <h2 style="font-size: 40px; font-weight: 800; line-height: 1.3;">Ready To Experience Purity?</h2>
+            <p style="margin-top: 15px; font-size: 18px; opacity: .9;">Order ShudhVeda Mustard Oil Today.</p>
+            <a href="https://wa.me/918004340041" class="btn-primary" style="background: var(--white); color: var(--primary); margin-top: 25px; font-weight: 700;">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2>SHUDHVEDA</h2>
+                    <p style="color: #ccc; line-height: 1.6; margin-top: 10px;">Purity You Can Taste. Tradition You Can Trust.</p>
+                    <div class="footer-policy-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Shipping Policy</a>
+                        <a href="#">Refund Policy</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#about">About</a>
+                        <a href="#process">Process</a>
+                        <a href="#products">Products</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <address style="margin-top: 10px;">
+                        <strong>Phone:</strong> +91 8004340041<br>
+                        <strong>Email:</strong> shudhveda.oil@gmail.com<br>
+                        <strong>Address:</strong> Rajapur, Post Karohaman,<br>
+                        Mankapur, District Gonda,<br>
+                        Uttar Pradesh, India - 271302
+                    </address>
+                </div>
+            </div>
+            <div style="text-align: center; color: #777; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; font-size: 13px;">
+                © 2026 ShudhVeda. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function sendOrder(){
+            let name = document.getElementById("name").value.trim();
+            let product = document.getElementById("product").value;
+            let quantity = document.getElementById("quantity").value.trim();
+            let address = document.getElementById("address").value.trim();
+
+            if(!name || !quantity || !address) {
+                alert("Please fill Name, Quantity, and Address before placing an order.");
+                return;
+            }
+
+            let message = `Hello ShudhVeda,\n\nName: ${name}\nProduct: ${product}\nQuantity: ${quantity}\nAddress: ${address}\n\nI would like to place an order.`;
+            let url = `https://wa.me/918004340041?text=${encodeURIComponent(message)}`;
+            
+            alert("Thank you for choosing ShudhVeda. Redirecting to WhatsApp.");
+            window.open(url, "_blank");
+        }
+    </script>
 </body>
 </html>
